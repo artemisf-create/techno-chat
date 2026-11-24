@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Techno</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111827'/%3E%3Cpath d='M8 11h16M16 11v11' stroke='%2322d3ee' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">T</span>
+      <div>
+        <h1>Techno</h1>
+        <p class="tagline" id="tagline"></p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <span class="who" id="whoTop"></span>
+      <span class="dot" id="dot" title=""></span>
+      <button class="icon-btn" id="settingsBtn" aria-label="Settings" aria-expanded="false" aria-controls="settings">&#9881;</button>
+    </div>
+  </header>
+
+  <section class="settings" id="settings" hidden>
+    <div id="authOut">
+      <label><span id="lblName"></span><input type="text" id="nameIn" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="24"></label>
+      <label><span id="lblPass"></span><input type="password" id="passIn" autocomplete="current-password" maxlength="200"></label>
+      <div class="row">
+        <button type="button" class="btn" id="loginBtn"></button>
+        <button type="button" class="btn ghost" id="signupBtn"></button>
+      </div>
+    </div>
+    <div id="authIn" hidden>
+      <p class="whoami" id="whoami"></p>
+      <label><span id="lblCode"></span><input type="text" id="codeIn" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="TCH-XXXXXXXX"></label>
+      <div class="row">
+        <button type="button" class="btn" id="redeemBtn"></button>
+        <a class="btn ghost" id="adminLink" href="admin.html" hidden></a>
+        <button type="button" class="btn ghost" id="logoutBtn"></button>
+      </div>
+    </div>
+    <p class="hint" id="authMsg" role="status"></p>
+    <label>
+      <span id="lblLang"></span>
+      <select id="langSel"></select>
+    </label>
+    <label class="check">
+      <input type="checkbox" id="speakChk">
+      <span id="lblSpeak"></span>
+    </label>
+  </section>
+
+  <main class="chat" id="chat" aria-live="polite"></main>
+
+  <div class="quiz" id="quiz" hidden></div>
+
+  <form class="composer" id="form" autocomplete="off">
+    <button type="button" class="mic" id="micBtn" aria-label="Microphone" aria-pressed="false">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V22h2v-3.08A7 7 0 0 0 19 12h-2Z"/></svg>
+    </button>
+    <input type="text" id="msg" maxlength="500" enterkeyhint="send" aria-label="Message">
+    <button type="submit" class="send" id="sendBtn" aria-label="Send">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M3 20v-6l12-2-12-2V4l19 8-19 8Z"/></svg>
+    </button>
+  </form>
+  <p class="foot" id="foot"></p>
+</div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
