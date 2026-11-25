@@ -75,6 +75,17 @@ h1 { margin: 0; font-size: 20px; line-height: 1.1; letter-spacing: .02em; }
 .dot.ok { background: var(--ok); }
 .dot.warn { background: var(--warn); }
 .dot.bad { background: var(--bad); }
+.dot.load { background: var(--accent); animation: pulse-dot 1s infinite alternate; }
+@keyframes pulse-dot { from { opacity: .35; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .dot.load { animation: none; } }
+
+.status {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 8px; padding: 8px 12px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; font-size: 13px; color: var(--muted);
+}
+.status[hidden] { display: none; }
+.status progress { flex: 1 1 120px; min-width: 100px; height: 8px; accent-color: var(--accent); }
+.status progress[hidden], .status .btn[hidden] { display: none; }
 
 button { font: inherit; color: inherit; }
 button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }

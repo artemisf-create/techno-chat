@@ -19,31 +19,20 @@
       </div>
     </div>
     <div class="top-actions">
-      <span class="who" id="whoTop"></span>
       <span class="dot" id="dot" title=""></span>
       <button class="icon-btn" id="settingsBtn" aria-label="Settings" aria-expanded="false" aria-controls="settings">&#9881;</button>
     </div>
   </header>
 
   <section class="settings" id="settings" hidden>
-    <div id="authOut">
-      <label><span id="lblName"></span><input type="text" id="nameIn" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="24"></label>
-      <label><span id="lblPass"></span><input type="password" id="passIn" autocomplete="current-password" maxlength="200"></label>
-      <div class="row">
-        <button type="button" class="btn" id="loginBtn"></button>
-        <button type="button" class="btn ghost" id="signupBtn"></button>
-      </div>
+    <label>
+      <span id="lblModel"></span>
+      <select id="modelSel"></select>
+    </label>
+    <p class="hint" id="deviceInfo"></p>
+    <div class="row">
+      <button type="button" class="btn ghost small" id="removeBtn"></button>
     </div>
-    <div id="authIn" hidden>
-      <p class="whoami" id="whoami"></p>
-      <label><span id="lblCode"></span><input type="text" id="codeIn" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="TCH-XXXXXXXX"></label>
-      <div class="row">
-        <button type="button" class="btn" id="redeemBtn"></button>
-        <a class="btn ghost" id="adminLink" href="admin.html" hidden></a>
-        <button type="button" class="btn ghost" id="logoutBtn"></button>
-      </div>
-    </div>
-    <p class="hint" id="authMsg" role="status"></p>
     <label>
       <span id="lblLang"></span>
       <select id="langSel"></select>
@@ -53,6 +42,12 @@
       <span id="lblSpeak"></span>
     </label>
   </section>
+
+  <div class="status" id="status" hidden>
+    <span id="statusText"></span>
+    <progress id="progress" max="1" value="0" hidden></progress>
+    <button type="button" class="btn small" id="enableBtn" hidden></button>
+  </div>
 
   <main class="chat" id="chat" aria-live="polite"></main>
 
@@ -69,7 +64,6 @@
   </form>
   <p class="foot" id="foot"></p>
 </div>
-<script src="config.js"></script>
-<script src="app.js"></script>
+<script type="module" src="app.js"></script>
 </body>
 </html>
